@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="20dp"
+    android:background="@color/white"
+    tools:context=".features.account.OtpNumFragment">
+
+    <ImageButton
+        android:id="@+id/backbtnotp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_arrow_back_24"
+        android:backgroundTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/anytxt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="6-digit code"
+        android:layout_marginTop="10dp"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backbtnotp"/>
+
+    <TextView
+        android:id="@+id/anytxt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Code sent to +994 773203785 unless you already have an account"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/anytxt1"/>
+
+    <LinearLayout
+        android:id="@+id/linlay1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/anytxt2"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/opt1"
+            android:layout_width="40dp"
+            android:textSize="8dp"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:padding="20dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_textbg"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:layout_weight="1"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/opt2"
+            android:layout_width="40dp"
+            android:textSize="8dp"
+            android:layout_height="match_parent"
+            android:padding="20dp"
+            android:textColor="@color/black"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_textbg"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:layout_weight="1"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/opt3"
+            android:layout_width="40dp"
+            android:textSize="8dp"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:padding="20dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_textbg"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:layout_weight="1"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/opt4"
+            android:layout_width="40dp"
+            android:textSize="8dp"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:padding="20dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_textbg"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:layout_weight="1"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/opt5"
+            android:layout_width="40dp"
+            android:textSize="8dp"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:padding="20dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_textbg"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:layout_weight="1"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/opt6"
+            android:layout_width="40dp"
+            android:textSize="8dp"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:padding="20dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_textbg"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/anytxt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already have an account? Log in"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/blue"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linlay1"/>
+
+    <Button
+        android:id="@+id/nextotp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

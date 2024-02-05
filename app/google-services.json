@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "493942585792",
+    "project_id": "rebolutbank",
+    "storage_bucket": "rebolutbank.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:493942585792:android:b55191a8180584b22a3025",
+        "android_client_info": {
+          "package_name": "com.example.rebolutbank"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnc3lUcK_T3AbwHiqa6WsZb823m8zpIVs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.rebolutbank.features.account.SignUpViewModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:padding="20dp"
+    android:layout_height="match_parent"
+    tools:context=".features.account.SignUpFragment">
+
+
+    <TextView
+        android:id="@+id/anytxt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name as in ID"
+        android:layout_marginTop="50dp"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/anytxt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Name as in your official documents"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/anytxt1"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameuserlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintTextColor="@color/black"
+        android:layout_marginTop="40dp"
+        app:helperTextTextColor="@color/red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/anytxt2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameuser"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="First Name"
+            android:padding="20dp"
+            android:background="@drawable/edit_textbg"
+            android:textColor="@color/black"
+            android:defaultFocusHighlightEnabled="false"
+            android:focusedByDefault="false"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lastnameuserlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintTextColor="@color/black"
+        android:layout_marginTop="40dp"
+        app:helperTextTextColor="@color/red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameuserlayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/lastnameuser"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Last Name"
+            android:padding="20dp"
+            android:background="@drawable/edit_textbg"
+            android:textColor="@color/black"
+            android:defaultFocusHighlightEnabled="false"
+            android:focusedByDefault="false"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/usercountrylayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintTextColor="@color/black"
+        android:layout_marginTop="40dp"
+        app:helperTextTextColor="@color/red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lastnameuserlayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/usercountry"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Country"
+            android:padding="20dp"
+            android:background="@drawable/edit_textbg"
+            android:textColor="@color/black"
+            android:defaultFocusHighlightEnabled="false"
+            android:focusedByDefault="false"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/nextdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Continue"
+        android:textSize="20dp"
+        android:padding="12dp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
