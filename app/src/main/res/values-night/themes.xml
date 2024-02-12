@@ -4,4 +4,6 @@
         <!-- Customize your dark theme here. -->
         <item name="colorPrimary">@color/white</item>
     </style>
+    <style name="Theme.RebolutBank" parent="Base.Theme.RebolutBank" />
+
 </resources>

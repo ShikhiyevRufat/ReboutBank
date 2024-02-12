@@ -10,38 +10,10 @@
         android:label="fragment_sign_or_login"
         tools:layout="@layout/fragment_sign_or_login" >
         <action
-            android:id="@+id/action_signOrLoginFragment_to_mainMenuFragment"
-            app:destination="@id/mainMenuFragment" />
-        <action
             android:id="@+id/action_signOrLoginFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/mainMenuFragment"
-        android:name="com.example.rebolutbank.features.menu.MainMenuFragment"
-        android:label="fragment_main_menu"
-        tools:layout="@layout/fragment_main_menu" />
-    <fragment
-        android:id="@+id/addNumberFragment"
-        android:name="com.example.rebolutbank.features.account.AddNumberFragment"
-        android:label="fragment_add_number"
-        tools:layout="@layout/fragment_add_number" >
-        <action
-            android:id="@+id/action_addNumberFragment_to_otpNumFragment"
-            app:destination="@id/otpNumFragment" />
-        <action
-            android:id="@+id/action_addNumberFragment_to_signUpFragment"
-            app:destination="@id/signUpFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/otpNumFragment"
-        android:name="com.example.rebolutbank.features.account.OtpNumFragment"
-        android:label="fragment_otp_num"
-        tools:layout="@layout/fragment_otp_num" >
-        <action
-            android:id="@+id/action_otpNumFragment_to_signUpFragment"
-            app:destination="@id/signUpFragment" />
-    </fragment>
+
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.example.rebolutbank.features.account.SignUpFragment"
@@ -51,15 +23,7 @@
             android:id="@+id/action_signUpFragment_to_birthDateFragment"
             app:destination="@id/birthDateFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/splashScreenFragment"
-        android:name="com.example.rebolutbank.features.account.SplashScreenFragment"
-        android:label="fragment_splash_screen"
-        tools:layout="@layout/fragment_splash_screen" >
-        <action
-            android:id="@+id/action_splashScreenFragment_to_addNumberFragment"
-            app:destination="@id/addNumberFragment" />
-    </fragment>
+
     <fragment
         android:id="@+id/birthDateFragment"
         android:name="com.example.rebolutbank.features.account.BirthDateFragment"
@@ -69,6 +33,7 @@
             android:id="@+id/action_birthDateFragment_to_mailSignFragment"
             app:destination="@id/mailSignFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/mailSignFragment"
         android:name="com.example.rebolutbank.features.account.MailSignFragment"
@@ -78,6 +43,7 @@
             android:id="@+id/action_mailSignFragment_to_passCodeFragment"
             app:destination="@id/passCodeFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/passCodeFragment"
         android:name="com.example.rebolutbank.features.account.PassCodeFragment"
@@ -87,6 +53,7 @@
             android:id="@+id/action_passCodeFragment_to_cardDesignFragment"
             app:destination="@id/cardDesignFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/cardDesignFragment"
         android:name="com.example.rebolutbank.features.account.CardDesignFragment"

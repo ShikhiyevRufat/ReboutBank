@@ -87,8 +87,6 @@ class AddNumberFragment : Fragment() {
                 // by combining the code with a verification ID.
                 Log.d(TAG, "onCodeSent:$verificationId")
 
-                var action = AddNumberFragmentDirections.actionAddNumberFragmentToOtpNumFragment()
-                findNavController().navigate(action)
 
                 // Save verification ID and resending token so we can use them later
                 storedVerificationId = verificationId

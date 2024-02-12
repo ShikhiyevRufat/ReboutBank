@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/mainMenuFragment"
+        android:title="Home"
+        android:icon="@drawable/ic_round_home"/>
+
+    <item android:id="@+id/settingFragment"
+        android:title="Setting"
+        android:icon="@drawable/icon_park_solid_setting_two"/>
+</menu>

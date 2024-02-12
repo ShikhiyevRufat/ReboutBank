@@ -47,8 +47,6 @@ class SplashScreenFragment : Fragment() {
     }
 
     fun onClick(){
-        val action = SplashScreenFragmentDirections.actionSplashScreenFragmentToAddNumberFragment()
-        findNavController().navigate(action)
 
     }
 

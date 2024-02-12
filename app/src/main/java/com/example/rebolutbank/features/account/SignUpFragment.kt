@@ -9,15 +9,21 @@ import android.view.ViewGroup
 import androidx.core.text.isDigitsOnly
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.rebolutbank.R
 import com.example.rebolutbank.databinding.FragmentSignUpBinding
+import com.google.firebase.Firebase
+import com.google.firebase.auth.auth
+import com.google.firebase.firestore.firestore
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SignUpFragment : Fragment() {
 
     private lateinit var binding: FragmentSignUpBinding
+    private val firestore = Firebase.firestore
     val viewModel : SignUpViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,11 +40,34 @@ class SignUpFragment : Fragment() {
         signUp()
 
         binding.nextdate.setOnClickListener {
-            nextdateaction()
+           nextdateaction()
+            sendbundle()
         }
+
+
 
         return binding.root
     }
+    private fun sendbundle() {
+        val username = binding.nameuser.text.toString()
+        val lastname = binding.lastnameuser.text.toString()
+        val country = binding.usercountry.text.toString()
+
+
+        val userDocument = firestore.collection("USERS").document(id.toString())
+        userDocument.set(
+            mapOf(
+                "username" to username,
+                "lastname" to lastname,
+                "country" to country,
+            )
+        )
+
+
+    }
+
+
+
 
     private fun signUp(){
         binding.nameuser.setOnFocusChangeListener{_,focused->
@@ -72,6 +101,7 @@ class SignUpFragment : Fragment() {
         else{
             var action = SignUpFragmentDirections.actionSignUpFragmentToBirthDateFragment()
             findNavController().navigate(action)
+
         }
 
     }

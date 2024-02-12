@@ -1,5 +1,6 @@
 package com.example.rebolutbank.features.account
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
+import androidx.navigation.fragment.findNavController
+import com.example.rebolutbank.MainActivity
 import com.example.rebolutbank.R
 import com.example.rebolutbank.R.color
 import com.example.rebolutbank.R.color.black
@@ -69,6 +72,11 @@ class CardDesignFragment : Fragment(R.layout.fragment_card_design) {
                 context?.let { it1 -> binding.cardfg.setCardBackgroundColor(it1.getColor(ligthgrey)) }
                 context?.let { it1 -> binding.cardbg.setCardBackgroundColor(it1.getColor(ligthgrey)) }
             }
+        }
+
+        binding.nextmenu.setOnClickListener {
+            val intent = Intent(requireContext(), MainActivity::class.java)
+            startActivity(intent)
         }
         return binding.root
     }

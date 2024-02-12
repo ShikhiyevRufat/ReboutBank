@@ -9,11 +9,14 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.rebolutbank.databinding.FragmentPassCodeBinding
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.auth.auth
+import com.google.firebase.firestore.firestore
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -21,13 +24,15 @@ class PassCodeFragment : Fragment() {
 
     private lateinit var binding: FragmentPassCodeBinding
     private val editTexts = arrayOfNulls<EditText>(6)
+    private val firestore = Firebase.firestore
+    private val viewModel: SignUpViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentPassCodeBinding.inflate(inflater)
-        val editTextIds = arrayOf(
+        var editTextIds = arrayOf(
             binding.passcode1,
             binding.passcode2,
             binding.passcode3,
@@ -43,6 +48,7 @@ class PassCodeFragment : Fragment() {
         binding.nextcarddesign.setOnClickListener {
             val action = PassCodeFragmentDirections.actionPassCodeFragmentToCardDesignFragment()
             findNavController().navigate(action)
+            useradddata()
         }
 
         return binding.root
@@ -63,32 +69,18 @@ class PassCodeFragment : Fragment() {
         })
     }
 
+private fun useradddata () {
+
+}
+
     private fun moveFocusToNextEditText(index: Int) {
         if (index < editTexts.size - 1) {
             // Move focus to the next EditText
             editTexts[index + 1]?.requestFocus()
         } else {
 
-
-            // If last EditText, you can perform an action (e.g., submit the passcode)
-            // For example, you might want to implement a method to handle passcode submission.
-            // submitPasscode()
         }
     }
 
-//    fun register() {
-//        val firebaseAuth = Firebase.auth
-//        firebaseAuth.createUserWithEmailAndPassword(
-//            binding..text.toString(),
-//            binding..text.toString())
-//            .addOnSuccessListener {
-//                findNavController().popBackStack()
-//            }.addOnFailureListener {
-//                (it as? FirebaseAuthException)?.errorCode?.let { errorCode->
-//                    Toast.makeText(context,"Problem creating account",Toast.LENGTH_SHORT).show()
-//                }
-//
-//            }
-//    }
 
 }

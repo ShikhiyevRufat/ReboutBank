@@ -70,8 +70,6 @@ class OtpNumFragment : Fragment() {
                     Log.d("Succes", "signInWithCredential:success")
 
                     val user = task.result?.user
-                    val action = OtpNumFragmentDirections.actionOtpNumFragmentToSignUpFragment()
-                    findNavController().navigate(action)
 
                 } else {
                     // Sign in failed, display a message and update the UI

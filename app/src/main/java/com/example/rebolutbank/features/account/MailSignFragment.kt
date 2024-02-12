@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.rebolutbank.R
 import com.example.rebolutbank.databinding.FragmentMailSignBinding
@@ -30,8 +31,11 @@ class MailSignFragment : Fragment() {
     ): View? {
         binding = FragmentMailSignBinding.inflate(inflater)
 
-        binding.nextmailsign.setOnClickListener {
-            valid_email()
+        emailActivate()
+        valid_password()
+
+        binding.nextpasscode.setOnClickListener {
+            register()
         }
 
         return binding.root
@@ -39,19 +43,61 @@ class MailSignFragment : Fragment() {
 
 
 
-    private fun valid_email() {
+    private fun emailActivate(){
+        binding.email.setOnFocusChangeListener{_,focused->
+            if(!focused){
+                binding.emaillayout.helperText = valid_email()
+
+            }
+        }
+
+        binding.password.setOnFocusChangeListener{_, focused->
+            if(!focused){
+                binding.passwordlayout.helperText = valid_password()
+            }
+        }
+    }
+
+    private fun valid_password() : String? {
+
+        val passwordtext = binding.password.text.toString()
+
+        if (passwordtext.length < 8){
+            return "Minimum character 8"
+        }
+        else if (!passwordtext.matches(".*[@#$%^&*!]*.".toRegex()) ){
+            return "Minimum (@#\$%^&*!.,?) one character "
+        }
+        return null
+
+    }
+
+    private fun valid_email() : String? {
 
         val emailText = binding.email.text.toString()
 
 
-        if (!Patterns.EMAIL_ADDRESS.matcher(emailText).matches() || emailText.isNullOrEmpty()) {
-            binding.emaillayout.helperText = "Email is not true"
-        }
-        else{
-            val action = MailSignFragmentDirections.actionMailSignFragmentToPassCodeFragment()
-            findNavController().navigate(action)
+        if (!Patterns.EMAIL_ADDRESS.matcher(emailText).matches()) {
+            return "Invalid Email"
         }
 
+        return null
+    }
+
+    fun register() {
+        val firebaseAuth = Firebase.auth
+        firebaseAuth.createUserWithEmailAndPassword(
+            binding.email.text.toString(),
+            binding.password.text.toString())
+            .addOnSuccessListener {
+                val action = MailSignFragmentDirections.actionMailSignFragmentToPassCodeFragment()
+                findNavController().navigate(action)
+            }.addOnFailureListener {
+                (it as? FirebaseAuthException)?.errorCode?.let { errorCode->
+                    Toast.makeText(context,"Account not been successful!",Toast.LENGTH_SHORT).show()
+                }
+
+            }
     }
 
 
