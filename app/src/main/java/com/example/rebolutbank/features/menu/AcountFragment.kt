@@ -58,10 +58,10 @@ class AcountFragment : Fragment() {
         val userDocument = firestore.collection("USERS").document(userId)
         userDocument.get()
             .addOnSuccessListener { document ->
-                val username = document.getString("username")
-                val lastnumber = document.getString("lastname")
+                val userName = document.getString("username")
+                val lastNumber = document.getString("lastname")
 
-                binding.toolbar.title = username + lastnumber
+                binding.toolbar.title = userName + lastNumber
 
             }
             .addOnFailureListener {
